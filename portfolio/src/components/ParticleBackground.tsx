@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -48,7 +47,7 @@ export default function ParticleBackground() {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 106, 0, ${0.3 + Math.random() * 0.3})`;
+        ctx.fillStyle = `rgba(255, 106, 0, ${0.3 + Math.random() * 0.9})`;
         ctx.fill();
 
         // Connect particles
@@ -88,7 +87,7 @@ export default function ParticleBackground() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 z-0"
-      style={{ opacity: 0.4 }}
+      style={{ opacity: 0.7 }}
     />
   );
 }
